@@ -14,28 +14,16 @@ public class CalculoDaCasa {
 		System.out.println("-------------------------------------");
 		System.out.println("  Calculo de área de uma casa ");
 		System.out.println("-------------------------------------");
-
-		System.out.print(" Qual o nome do cômodo? ");
-		comodo = leitor.next();
 		
-		System.out.print(" Qual a largura? ");
-		largura = leitor.nextInt();
-		
-		System.out.print(" Qual o comprimento? ");
-		comprimento = leitor.nextInt();
-		
-		metrosQuadrados = largura * comprimento; 
-		System.out.print(" A sala tem " + metrosQuadrados + " metros quadrados.");
-		
-		System.out.println();
-		System.out.println(" Você deseja calcular mais cômodos (S/N)? ");
+		System.out.print("Iniciar o calculo? ");
 		solicitacao = leitor.next();
-		
-		int contador = 0;
-		
 		System.out.println();
 		
-		while ( solicitacao.equals("S") || solicitacao.equals("s") ) {
+		int AreaTotal = 0;
+		
+		if ( solicitacao.equals("Sim") || solicitacao.equals("sim") || solicitacao.equals("s") ) {
+			while ( solicitacao.equals("S") || solicitacao.equals("sim") || solicitacao.equals("s") ) {
+		
 				System.out.print(" Qual o nome do cômodo? ");
 				comodo = leitor.next();
 				
@@ -49,23 +37,18 @@ public class CalculoDaCasa {
 				System.out.print(" A sala tem " + metrosQuadrados + " metros quadrados.");
 				
 				System.out.println();
+				System.out.println();
 				
-				
-				System.out.println(" Você deseja calcular mais cômodos (S/N)? ");
+				System.out.print("Você deseja calcular mais cômodos (S/N)? ");
 				solicitacao = leitor.next();
-				contador++;
-				
-				}
-				
-				int areaTotal = metrosQuadrados + contador;
-				System.out.print("A área total da casa é " + areaTotal + "metros quadrados.");
 			
+				AreaTotal = metrosQuadrados + AreaTotal;
+				
+				} 
+				leitor.close();
+				System.out.println("A área total da casa é " + AreaTotal + " metros quadrados.");
+		} else {
+			System.out.println(" Inválido. Por favor digite S/N");
 		}
-		
-		
-		
-
-		
-		
 	}
-
+}
